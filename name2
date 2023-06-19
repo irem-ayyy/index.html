@@ -1,0 +1,108 @@
+1)
+#include <stdio.h>
+#include <string.h>
+
+void ReverseText(char *text) {
+    int start = 0;
+    int end = strlen(text) - 1;
+
+    while (start < end) {
+        char temp = text[start];
+        text[start] = text[end];
+        text[end] = temp;
+
+        start++;
+        end--;
+    }
+}
+
+int main() {
+    char text[1000];
+
+    printf("Metni Girin: ");
+    fgets(text, sizeof(text), stdin);
+
+    // Metnin sonunda yer alan yeni satır karakterini kaldırın
+    text[strcspn(text, "\n")] = '\0';
+
+    ReverseText(text);
+
+    printf("Ters Çevrilmiş Metin: %s\n", text);
+
+    return 0;
+}
+2)
+#include <stdio.h>
+#include <string.h>
+
+void ReverseText(char *text) {
+    int start = 0;
+    int end = strlen(text) - 1;
+
+    while (start < end) {
+        char temp = text[start];
+        text[start] = text[end];
+        text[end] = temp;
+
+        start++;
+        end--;
+    }
+}
+
+int main() {
+    char text[1000];
+
+    printf("Metni Girin: ");
+    fgets(text, sizeof(text), stdin);
+
+    // Metnin sonunda yer alan yeni satır karakterini kaldırın
+    text[strcspn(text, "\n")] = '\0';
+
+    ReverseText(text);
+
+    printf("Ters Çevrilmiş Metin: %s\n", text);
+
+    return 0;
+}
+3)
+#include <stdio.h>
+
+void SortIntArr(int arr[], int size) {
+    int i, j, temp;
+
+    for (i = 0; i < size - 1; i++) {
+        for (j = 0; j < size - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
+
+int main() {
+    int size, i;
+
+    printf("Dizi Boyutunu Girin: ");
+    scanf("%d", &size);
+
+    int arr[size];
+
+    printf("Dizi Elemanlarını Girin:\n");
+    for (i = 0; i < size; i++) {
+        printf("Eleman %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    SortIntArr(arr, size);
+
+    printf("Sıralanmış Dizi: ");
+    for (i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
